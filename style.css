@@ -88,6 +88,10 @@ header {
     font-weight: 300;
 }
 
+.carousel-container {
+    position: relative;
+}
+
 .carousel {
     height: 100vh;
     padding: 0 10%;
