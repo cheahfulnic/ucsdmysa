@@ -89,6 +89,8 @@ header {
     font-weight: 300;
 }
 
+/* next section */
+
 .carousel {
     display: flex;
     height: 100vh;
@@ -98,12 +100,11 @@ header {
 
 .carousel .box-info {
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
     width: 650px;
-    height: 250px;
+    height: 310px;
     background: slateblue;
     overflow: hidden;
+    padding-top: 20px;
 }
 
 .box-info .list-info{
@@ -116,8 +117,8 @@ header {
     justify-content: center;
     color: black;
     height: 250px;
-    padding: 10px 10px;
     margin-bottom: 50px;
+    margin-top: 10px;
 }
 
 .info h2 {
