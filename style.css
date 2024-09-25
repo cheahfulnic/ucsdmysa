@@ -87,3 +87,97 @@ header {
     color: #fff;
     font-weight: 300;
 }
+
+.carousel {
+    height: 100vh;
+    padding: 0 10%;
+}
+
+.carousel .box-info {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 650px;
+    height: 250px;
+    background: slateblue;
+    overflow: hidden;
+}
+
+.box-info .list-info{
+    transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.list-info .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    height: 250px;
+}
+
+.info h2 {
+    font-size: 50px;
+    line-height: 1;
+}
+
+.info p {
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.info .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.carousel .list-img {
+    height: 100%;
+}
+
+.list-img item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.item img {
+    position: absolute;
+    right: 0;
+    pointer-events: none;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, .1));
+}
+
+.prevnext {
+    position: absolute;
+    bottom: 7%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.prevnext span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 55px;
+    color: #fff;
+}
