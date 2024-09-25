@@ -26,6 +26,6 @@ nextBtn.addEventListener('click', () => {
 })
 
 prevBtn.addEventListener('click', () => {
-    index = (index > 3) ? index - 1 : 0;
+    index = (index > 0) ? index - 1 : 0;
     listInfo.style.transform = `translateY(${index * -25}%)`;
 })
