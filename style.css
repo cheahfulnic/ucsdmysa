@@ -53,6 +53,7 @@ header {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 #text {
@@ -160,7 +161,7 @@ header {
 }
 
 .prevnext {
-    position: absolute;
+    position: relative;
     bottom: 7%;
     left: 50%;
     transform: translate(-50%);
