@@ -88,17 +88,13 @@ header {
     font-weight: 300;
 }
 
-.carousel-container {
-    position: relative;
-}
-
 .carousel {
-    height: auto;
+    height: 100vh;
     padding: 0 10%;
 }
 
 .carousel .box-info {
-    position: absolute;
+    position: relative;
     top: 50%;
     transform: translateY(-50%);
     width: 650px;
