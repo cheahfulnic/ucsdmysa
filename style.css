@@ -105,7 +105,6 @@ header {
     position: relative;
     width: 650px;
     height: 310px;
-    background: slateblue;
     overflow: hidden;
     padding-top: 20px;
     margin-top: 150px;
@@ -119,7 +118,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: black;
+    color: #fff;
     height: 250px;
     margin-bottom: 50px;
     margin-top: 10px;
@@ -144,11 +143,11 @@ header {
     width: 100px;
     height: 50px;
     background: transparent;
-    border: 2px solid black;
+    border: 2px solid #fff;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     font-size: 16px;
-    color: black;
+    color: #fff;
     text-decoration: none;
     font-weight: 600;
     margin: 0 10px;
@@ -167,7 +166,7 @@ header {
     height: auto;
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 200px;
 }
 
 .item img {
