@@ -161,12 +161,11 @@ header {
     margin-left: 100px;
 }
 
-.list-img item {
+.list-img .item {
     position: relative;
     height: auto;
     display: flex;
     align-items: center;
-    margin-top: 400px;
 }
 
 .item img {
