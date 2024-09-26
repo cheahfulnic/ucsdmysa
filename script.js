@@ -24,7 +24,7 @@ window.addEventListener('scroll', () => {
 
 nextBtn.addEventListener('click', () => {
     index = (index < 3) ? index + 1 : 3;
-    listInfo.style.transform = `translateY(${index * -300}px)`;
+    listInfo.style.transform = `translateY(${index * -310}px)`;
     listImg.style.transform = `translateY(${index * -50}%)`;
     bgs[index].classList.add('active');
 })
@@ -32,7 +32,7 @@ nextBtn.addEventListener('click', () => {
 prevBtn.addEventListener('click', () => {
     indexPrev = (index > 0) ? index : 0;
     index = (index > 0) ? index - 1 : 0;
-    listInfo.style.transform = `translateY(${index * -300}px)`;
+    listInfo.style.transform = `translateY(${index * -310}px)`;
     listImg.style.transform = `translateY(${index * -50}%)`;
     bgs[indexPrev].classList.remove('active');
 })
