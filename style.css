@@ -107,7 +107,7 @@ header {
     width: 650px;
     height: 310px;
     overflow: hidden;
-    padding-top: 20px;
+    padding-top: 40px;
     margin-top: 150px;
 }
 
@@ -121,14 +121,13 @@ header {
     justify-content: center;
     color: #fff;
     height: 250px;
-    margin-top: 10px;
+    margin-bottom: 50px;
 }
 
 .info h2 {
     font-size: 50px;
     line-height: 1;
     padding: 0 10px;
-    margin-top: 20px;
 }
 
 .info p {
@@ -152,7 +151,8 @@ header {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    margin: 0 10px 20px;
+    margin-left: 10px;
+    margin-top: -30px;
 }
 
 .carousel .list-img {
@@ -160,6 +160,7 @@ header {
     transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     margin-left: 100px;
     margin-top: 75px;
+    overflow: hidden;
 }
 
 .list-img .item {
