@@ -180,7 +180,7 @@ header {
     display: flex;
     justify-content: center;  /* Centers the group of buttons */
     margin-top: -150px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .prevnext span {
