@@ -23,12 +23,12 @@ window.addEventListener('scroll', () => {
 
 nextBtn.addEventListener('click', () => {
     index = (index < 3) ? index + 1 : 3;
-    listInfo.style.transform = `translateY(${index * -310}px)`;
+    listInfo.style.transform = `translateY(${index * -300}px)`;
     listImg.style.transform = `translateY(${index * -100}%)`;
 })
 
 prevBtn.addEventListener('click', () => {
     index = (index > 0) ? index - 1 : 0;
-    listInfo.style.transform = `translateY(${index * -310}px)`;
+    listInfo.style.transform = `translateY(${index * -300}px)`;
     listImg.style.transform = `translateY(${index * -100}%)`;
 })
