@@ -235,14 +235,5 @@ footer {
 }
 
 .contact {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.social {
-    font-size: 2em;
-    color: #359381;
-    cursor: pointer;
+    background: #f9f9f9;
 }
