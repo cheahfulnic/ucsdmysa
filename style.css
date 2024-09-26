@@ -13,8 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-header,
-footer {
+header {
     position: absolute;
     top: 0;
     left: 0;
@@ -234,6 +233,12 @@ footer {
     clip-path: circle(75% at 50% 50%);
 }
 
-.contact {
+footer {
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 100;
     background: #f9f9f9;
 }
