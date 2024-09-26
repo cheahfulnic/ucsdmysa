@@ -102,7 +102,8 @@ header {
     overflow: hidden;
 }
 
-.carousel .box-info {
+.carousel .box-info,
+.carousel .list-img {
     position: relative;
     width: 650px;
     height: 310px;
@@ -111,15 +112,16 @@ header {
     margin-top: 150px;
 }
 
-.box-info .list-info{
+.box-info .list-info, 
+.list-img .item {
     transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.list-info .info {
+.list-info .info,
+.item img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #fff;
     height: 250px;
     margin-bottom: 50px;
     margin-top: 10px;
@@ -129,12 +131,14 @@ header {
     font-size: 50px;
     line-height: 1;
     padding: 0 10px;
+    color: #fff;
 }
 
 .info p {
     font-size: 16px;
     margin: 20px 0;
     padding: 0 10px;
+    color: #fff;
 }
 
 .info .btn {
@@ -154,33 +158,32 @@ header {
     margin: 0 10px;
 }
 
-.carousel .list-img {
+/*.carousel .list-img {
     height: 100%;
     display: flex;
     flex-direction: column;
     transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     margin-left: 100px;
-}
+}*/
 
-.list-img .item {
+/*.list-img .item {
     position: relative;
     display: flex;
     align-items: center;
     z-index: 2;
-    min-height: 300px;
-}
+}*/
 
-.item img {
+/*.item img {
     position: relative;
     pointer-events: none;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, .1));
-}
+}*/
 
 .prevnext {
     display: flex;
     justify-content: center;  /* Centers the group of buttons */
     margin-top: -150px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .prevnext span {
