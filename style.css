@@ -152,7 +152,7 @@ header {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    margin: 0 10px;
+    margin: 0 10px 10px;
 }
 
 .carousel .list-img {
@@ -163,7 +163,7 @@ header {
 
 .list-img .item {
     position: relative;
-    height: 60%;
+    height: 50%;
     display: flex;
     align-items: center;
 }
@@ -177,7 +177,7 @@ header {
 .prevnext {
     display: flex;
     justify-content: center;  /* Centers the group of buttons */
-    margin-top: -100px;
+    margin-top: -150px;
     margin-bottom: 20px;
 }
 
@@ -194,7 +194,7 @@ header {
     cursor: pointer;
     font-size: 55px;
     color: #fff;
-    margin: 0 10px 10px;
+    margin: 0 10px;
 }
 
 .bg-box .bg {
