@@ -179,7 +179,8 @@ header {
 .prevnext {
     display: flex;
     justify-content: center;  /* Centers the group of buttons */
-    margin-top: -200px;
+    margin-top: -150px;
+    margin-bottom: 50px;
 }
 
 .prevnext span {
@@ -235,6 +236,7 @@ header {
 }
 
 footer {
+    position: relative;
     width: 100%;
     padding: 30px 100px;
     display: flex;
@@ -242,4 +244,5 @@ footer {
     align-items: center;
     z-index: 100;
     background: #f9f9f9;
+    margin-top: auto;
 }
