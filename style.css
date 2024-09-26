@@ -154,6 +154,7 @@ header {
     flex-direction: column;
     transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     overflow: hidden;
+    margin-left: 50px;
 }
 
 .list-img item {
