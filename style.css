@@ -54,7 +54,6 @@ header {
     align-items: center;
     height: 100vh;
     overflow: hidden;
-    z-index: 2;
 }
 
 #text {
@@ -76,7 +75,6 @@ header {
     position: relative;
     background-color: #003329;
     padding: 100px;
-    z-index: 2;
 }
 
 .sec h2 {
@@ -98,7 +96,6 @@ header {
     height: 100vh;
     padding: 0 10%;
     overflow: hidden;
-    z-index: 2;
 }
 
 .carousel .box-info {
@@ -178,7 +175,6 @@ header {
     display: flex;
     justify-content: center;  /* Centers the group of buttons */
     margin-top: -200px;
-    z-index: 2;
 }
 
 .prevnext span {
@@ -231,4 +227,17 @@ header {
 .bg-box .bg:nth-child(3).active,
 .bg-box .bg:nth-child(4).active {
     clip-path: circle(75% at 50% 50%);
+}
+
+.contact {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.social {
+    font-size: 2em;
+    color: #359381;
+    cursor: pointer;
 }
