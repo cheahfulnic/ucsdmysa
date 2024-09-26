@@ -121,7 +121,6 @@ header {
     justify-content: center;
     color: #fff;
     height: 250px;
-    margin-bottom: 50px;
     margin-top: 10px;
 }
 
@@ -153,13 +152,14 @@ header {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    margin: 0 10px;
+    margin: 0 10px 20px;
 }
 
 .carousel .list-img {
     height: 50%;
     transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     margin-left: 100px;
+    margin-top: 75px;
 }
 
 .list-img .item {
