@@ -169,8 +169,7 @@ header {
 }
 
 .item img {
-    position: absolute;
-    right: 0;
+    position: relative;
     pointer-events: none;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, .1));
 }
@@ -178,7 +177,7 @@ header {
 .prevnext {
     display: flex;
     justify-content: center;  /* Centers the group of buttons */
-    margin-top: -150px;
+    margin-top: -100px;
     margin-bottom: 20px;
 }
 
