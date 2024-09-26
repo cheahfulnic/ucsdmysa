@@ -154,7 +154,7 @@ header {
     flex-direction: column;
     transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     overflow: hidden;
-    margin-left: 50px;
+    margin-left: 100px;
 }
 
 .list-img item {
@@ -194,6 +194,8 @@ header {
 
 .bg-box .bg {
     position: relative;
+    height: auto;
+    transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .bg-box .bg:nth-child(1) {
@@ -216,4 +218,10 @@ header {
 .bg-box .bg:nth-child(3),
 .bg-box .bg:nth-child(4) {
     clip-path: circle(0% at 50% 50%);
+}
+
+.bg-box .bg:nth-child(2).active,
+.bg-box .bg:nth-child(3).active,
+.bg-box .bg:nth-child(4).active {
+    clip-path: circle(75% at 50% 50%);
 }
