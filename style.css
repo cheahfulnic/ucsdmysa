@@ -13,7 +13,8 @@ body {
     overflow-x: hidden;
 }
 
-header {
+header,
+footer {
     position: absolute;
     top: 0;
     left: 0;
@@ -25,14 +26,16 @@ header {
     z-index: 100;
 }
 
-.logo {
+.logo,
+.contact {
     font-size: 2em;
     color: #359381;
     pointer-events: none;
     margin-right: 270px;
 }
 
-.navigation a {
+.navigation a,
+.social a {
     text-decoration: none;
     color: #359381;
     padding: 6px 15px;
@@ -42,7 +45,9 @@ header {
 }
 
 .navigation a:hover,
-.navigation a.active {
+.navigation a.active,
+.social a:hover,
+.social a.active {
     background: #359381;
     color: #fff;
 }
