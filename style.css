@@ -111,7 +111,8 @@ header {
     margin-top: 150px;
 }
 
-.box-info .list-info{
+.box-info .list-info,
+.box-info .list-img {
     transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
@@ -155,19 +156,15 @@ header {
     margin-top: -40px;
 }
 
-.carousel .list-img {
+.list-img .item {
+    position: relative;
+    display: flex;
+    align-items: center;
     height: 310px;
     transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     margin-left: 100px;
     margin-top: 150px;
     overflow: hidden;
-}
-
-.list-img .item {
-    position: relative;
-    height: 310px;
-    display: flex;
-    align-items: center;
 }
 
 .item img {
