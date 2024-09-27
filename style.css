@@ -96,14 +96,13 @@ header {
 /* next section */
 
 .carousel {
-    display: flex;
     height: 100vh;
     padding: 0 10%;
     overflow: hidden;
 }
 
 .carousel .box-info {
-    position: relative;
+    display: flex;
     width: 100%;
     height: 310px;
     overflow: hidden;
@@ -113,11 +112,12 @@ header {
 
 .box-info .list-info,
 .box-info .list-img {
+    position: relative;
     transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    flex: 1;
 }
 
-.list-info .info {
+.list-info .info,
+.list-img .item {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -155,17 +155,6 @@ header {
     font-weight: 600;
     margin-left: 10px;
     margin-top: -40px;
-}
-
-.list-img .item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 310px;
-    transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    margin-left: 100px;
-    margin-top: 150px;
-    overflow: hidden;
 }
 
 .item img {
