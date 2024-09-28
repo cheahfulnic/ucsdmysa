@@ -20,6 +20,11 @@ window.addEventListener('scroll', () => {
     hill5.style.left = value * 1.5 + 'px';
     hill4.style.left = value * -1.5 + 'px';
     hill1.style.top = value * 1 + 'px';
+        let hill1Position = value * 1;
+    if (hill1Position > 200) {
+        hill1Position = 200;
+    }
+    hill1.style.top = hill1Position + 'px';
 })
 
 nextBtn.addEventListener('click', () => {
