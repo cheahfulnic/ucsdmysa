@@ -134,13 +134,13 @@ header {
 }
 
 .info h2 {
-    font-size: 4vh;
+    font-size: 3vh;
     line-height: 1;
     padding: 0 10px;
 }
 
 .info p {
-    font-size: 2vh;
+    font-size: 1.5vh;
     margin: 20px 0;
     padding: 0 10px;
     min-height: 200px;
@@ -151,12 +151,12 @@ header {
     justify-content: center;
     align-items: center;
     width: 15vh;
-    height: 4vh;
+    height: 3vh;
     background: transparent;
     border: 2px solid #fff;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    font-size: 2vh;
+    font-size: 1.5vh;
     color: #fff;
     text-decoration: none;
     font-weight: 600;
@@ -232,7 +232,7 @@ header {
 footer {
     position: relative;
     width: 100%;
-    padding: 3% 5%;
+    padding: 3% 20%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
