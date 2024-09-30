@@ -180,8 +180,8 @@ header {
 .prevnext {
     display: flex;
     justify-content: center;  /* Centers the group of buttons */
-    margin-top: -150px;
-    margin-bottom: 20px;
+    margin-top: -25vw;
+    margin-bottom: 25vw;
 }
 
 .prevnext span {
