@@ -30,7 +30,7 @@ header {
     font-size: 2em;
     color: #359381;
     pointer-events: none;
-    margin-right: 270px;
+    margin-right: auto;
 }
 
 .navigation a,
@@ -227,7 +227,7 @@ header {
 footer {
     position: relative;
     width: 100%;
-    padding: 1% 5%;
+    padding: 3% 5%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
