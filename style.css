@@ -226,10 +226,10 @@ header {
 /* One event visible at a time (matches JS translate step) */
 .carousel .box-info {
   width: min(1200px, 92vw);
-  margin: clamp(140px, 18vh, 220px) auto 0; /* <-- more spacing for first event */
+  margin: clamp(140px, 18vh, 220px) auto 0;
 
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* KEY: show event 1 initially */
   justify-content: space-between;
   gap: clamp(28px, 6vw, 70px);
 
@@ -243,6 +243,7 @@ header {
   position: relative;
   transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   will-change: transform;
+  align-self: flex-start; /* reinforce top alignment */
 }
 
 /* Left: info */
