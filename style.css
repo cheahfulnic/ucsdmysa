@@ -12,8 +12,12 @@
   --shadow: 0 0 10px rgba(0, 0, 0, 0.10);
   --radius: 18px;
 
+  /* site padding */
   --pad-x: clamp(16px, 6vw, 80px);
   --pad-y: clamp(56px, 8vw, 110px);
+
+  /* centered column width for About/Events/Board */
+  --container: 1100px;
 
   /* Gradient stage should cover events + buttons */
   --grad-h: clamp(780px, 112vh, 1250px);
@@ -36,9 +40,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-html, body {
-  height: 100%;
-}
+html, body { height: 100%; }
 
 body {
   background: var(--bg);
@@ -141,13 +143,21 @@ header {
 }
 
 /* =========================
-   About section
+   About section (centered content)
    ========================= */
 .sec {
   position: relative;
   background-color: var(--deep);
-  padding: var(--pad-y) var(--pad-x);
   width: 100%;
+  padding: var(--pad-y) 0;
+}
+
+.sec h2,
+.sec p {
+  max-width: var(--container);
+  width: calc(100% - (2 * var(--pad-x)));
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sec h2 {
@@ -161,7 +171,6 @@ header {
   color: var(--white);
   font-weight: 300;
   line-height: 1.65;
-  max-width: 950px;
 }
 
 /* =========================
@@ -182,18 +191,10 @@ header {
   z-index: 0;
 }
 
-.bg-box .bg:nth-child(1) {
-  background: linear-gradient(360deg, #408e20, #9acd31);
-}
-.bg-box .bg:nth-child(2) {
-  background: linear-gradient(360deg, #550802, #f40401);
-}
-.bg-box .bg:nth-child(3) {
-  background: linear-gradient(360deg, #696901, #ffff03);
-}
-.bg-box .bg:nth-child(4) {
-  background: linear-gradient(360deg, #823043, #fac0cb);
-}
+.bg-box .bg:nth-child(1) { background: linear-gradient(360deg, #408e20, #9acd31); }
+.bg-box .bg:nth-child(2) { background: linear-gradient(360deg, #550802, #f40401); }
+.bg-box .bg:nth-child(3) { background: linear-gradient(360deg, #696901, #ffff03); }
+.bg-box .bg:nth-child(4) { background: linear-gradient(360deg, #823043, #fac0cb); }
 
 .bg-box .bg:nth-child(2),
 .bg-box .bg:nth-child(3),
@@ -217,7 +218,7 @@ header {
   /* Pull events onto the gradient stage */
   margin-top: calc(-1 * var(--grad-h));
 
-  padding: clamp(56px, 7vw, 90px) var(--pad-x) 0;
+  padding: clamp(40px, 6vw, 70px) 0 0;
   overflow: hidden;
   background: transparent;
 }
@@ -225,7 +226,7 @@ header {
 /* One event visible at a time (matches JS translate step) */
 .carousel .box-info {
   width: min(1200px, 92vw);
-  margin: clamp(70px, 10vh, 120px) auto 0;
+  margin: clamp(140px, 18vh, 220px) auto 0; /* <-- more spacing for first event */
 
   display: flex;
   align-items: center;
@@ -270,9 +271,7 @@ header {
 }
 
 /* Ensure each image aligns to the right of its matching event */
-.list-img .item {
-  align-items: flex-end;
-}
+.list-img .item { align-items: flex-end; }
 
 /* Text styles (prevent height expansion that causes overlap) */
 .info h2 {
@@ -287,7 +286,7 @@ header {
   margin: 12px 0 14px;
   padding: 0 10px;
   max-width: 60ch;
-  min-height: 0; /* override old min-height if present */
+  min-height: 0;
 }
 
 /* CTA button */
@@ -316,13 +315,8 @@ header {
   transition: transform 160ms ease, background 160ms ease;
 }
 
-.info .btn:hover {
-  background: rgba(255, 255, 255, 0.14);
-}
-
-.info .btn:active {
-  transform: scale(0.98);
-}
+.info .btn:hover { background: rgba(255, 255, 255, 0.14); }
+.info .btn:active { transform: scale(0.98); }
 
 /* Event image */
 .item img {
@@ -350,7 +344,7 @@ header {
   margin: 14px 0 0;
   padding: 10px 0 clamp(32px, 5vw, 60px);
 
-  background: transparent; /* show gradient */
+  background: transparent;
 }
 
 .prevnext span {
@@ -373,26 +367,22 @@ header {
   transition: transform 160ms ease, background 160ms ease;
 }
 
-.prevnext span:hover {
-  background: rgba(255, 255, 255, 0.14);
-}
-
-.prevnext span:active {
-  transform: scale(0.98);
-}
+.prevnext span:hover { background: rgba(255, 255, 255, 0.14); }
+.prevnext span:active { transform: scale(0.98); }
 
 /* =========================
-   Board
+   Board (centered like About/Events)
    ========================= */
 .board {
   position: relative;
   width: 100%;
-  padding: var(--pad-y) var(--pad-x);
+  padding: var(--pad-y) 0;
   background: var(--deep);
 }
 
 .board__inner {
-  max-width: 1100px;
+  max-width: var(--container);
+  width: calc(100% - (2 * var(--pad-x)));
   margin: 0 auto;
 }
 
@@ -515,18 +505,14 @@ footer {
     width: 100%;
   }
 
-  .list-img .item {
-    align-items: flex-start;
-  }
+  .list-img .item { align-items: flex-start; }
 
   .item img {
     max-width: 85vw;
     height: clamp(140px, 18vh, 200px);
   }
 
-  .board__grid {
-    grid-template-columns: 1fr;
-  }
+  .board__grid { grid-template-columns: 1fr; }
 
   footer {
     flex-direction: column;
