@@ -15,13 +15,13 @@
   --pad-x: clamp(16px, 6vw, 80px);
   --pad-y: clamp(56px, 8vw, 110px);
 
-  /* IMPORTANT: height of the gradient stage behind Events + buttons */
+  /* Gradient stage should cover events + buttons */
   --grad-h: clamp(780px, 112vh, 1250px);
 
-  /* IMPORTANT: carousel step (must match script.js translate step) */
+  /* MUST match script.js translateY step */
   --step: 310px;
 
-  /* slide height + margin-bottom must equal --step */
+  /* slide height + slide gap = --step */
   --slide-h: 250px;
   --slide-gap: 60px;
 }
@@ -47,7 +47,7 @@ body {
 }
 
 /* =========================
-   Header (logo + nav left)
+   Header (logo + nav on left)
    ========================= */
 header {
   position: absolute;
@@ -75,7 +75,7 @@ header {
 .navigation {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px; /* gaps between nav links */
+  gap: 12px;
   margin-right: 0;
 }
 
@@ -165,8 +165,7 @@ header {
 }
 
 /* =========================
-   Gradient background stage
-   (JS toggles .active on these)
+   Gradient background stage (JS toggles .active)
    ========================= */
 .bg-box {
   position: relative;
@@ -186,15 +185,12 @@ header {
 .bg-box .bg:nth-child(1) {
   background: linear-gradient(360deg, #408e20, #9acd31);
 }
-
 .bg-box .bg:nth-child(2) {
   background: linear-gradient(360deg, #550802, #f40401);
 }
-
 .bg-box .bg:nth-child(3) {
   background: linear-gradient(360deg, #696901, #ffff03);
 }
-
 .bg-box .bg:nth-child(4) {
   background: linear-gradient(360deg, #823043, #fac0cb);
 }
@@ -212,14 +208,13 @@ header {
 }
 
 /* =========================
-   Events: overlay carousel ON TOP of gradient stage
-   (CSS-only fix for the big empty gradient block)
+   Events (carousel overlays the gradient)
    ========================= */
 .carousel {
   position: relative;
   z-index: 2;
 
-  /* pull the carousel upward so it sits on the gradient stage */
+  /* Pull events onto the gradient stage */
   margin-top: calc(-1 * var(--grad-h));
 
   padding: clamp(56px, 7vw, 90px) var(--pad-x) 0;
@@ -227,43 +222,42 @@ header {
   background: transparent;
 }
 
-/* One-visible-at-a-time viewport: height must match JS step */
+/* One event visible at a time (matches JS translate step) */
 .carousel .box-info {
-  width: 100%;
-  max-width: 1100px;
-  margin: clamp(90px, 14vh, 150px) auto 0;
+  width: min(1200px, 92vw);
+  margin: clamp(70px, 10vh, 120px) auto 0;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(16px, 4vw, 36px);
+  gap: clamp(28px, 6vw, 70px);
 
   height: var(--step);
   overflow: hidden;
 }
 
-/* The sliding columns */
+/* Sliding columns */
 .box-info .list-info,
 .box-info .list-img {
   position: relative;
   transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  will-change: transform;
 }
 
-/* Left text column */
+/* Left: info */
 .box-info .list-info {
-  flex: 1 1 60%;
+  flex: 1 1 62%;
   min-width: 0;
 }
 
-/* Right image column (one image per event) */
+/* Right: image list MUST stack vertically (not side-by-side) */
 .box-info .list-img {
   flex: 0 0 auto;
-  display: flex;
-  justify-content: flex-end;
-  min-width: 0;
+  width: min(440px, 38vw);
+  display: block; /* key fix */
 }
 
-/* Each slide MUST total exactly --step (250 + 60 = 310) */
+/* Each slide must total exactly 310px = 250 + 60 */
 .list-info .info,
 .list-img .item {
   display: flex;
@@ -272,21 +266,28 @@ header {
   color: var(--white);
 
   height: var(--slide-h);
-  margin-bottom: var(--slide-gap);
+  margin: 0 0 var(--slide-gap) 0;
 }
 
-/* Text styles */
+/* Ensure each image aligns to the right of its matching event */
+.list-img .item {
+  align-items: flex-end;
+}
+
+/* Text styles (prevent height expansion that causes overlap) */
 .info h2 {
-  font-size: clamp(18px, 2.2vw, 28px);
+  font-size: clamp(20px, 2.4vw, 32px);
   line-height: 1.05;
   padding: 0 10px;
 }
 
 .info p {
-  font-size: clamp(12px, 1.15vw, 15px);
+  font-size: clamp(13px, 1.2vw, 16px);
   line-height: 1.6;
-  margin: 14px 0 18px;
+  margin: 12px 0 14px;
   padding: 0 10px;
+  max-width: 60ch;
+  min-height: 0; /* override old min-height if present */
 }
 
 /* CTA button */
@@ -311,6 +312,7 @@ header {
   font-weight: 600;
 
   margin-left: 10px;
+  margin-top: 6px;
   transition: transform 160ms ease, background 160ms ease;
 }
 
@@ -324,9 +326,9 @@ header {
 
 /* Event image */
 .item img {
-  height: clamp(150px, 22vh, 230px);
+  height: clamp(170px, 24vh, 270px);
   width: auto;
-  max-width: min(420px, 40vw);
+  max-width: 100%;
   object-fit: contain;
 
   pointer-events: none;
@@ -334,7 +336,7 @@ header {
 }
 
 /* =========================
-   Prev/Next buttons (separate, tight, on gradient)
+   Prev/Next (separate, tight, on gradient)
    ========================= */
 .prevnext {
   position: relative;
@@ -345,9 +347,8 @@ header {
   align-items: center;
   gap: 14px;
 
-  /* tight spacing under events */
-  margin: 18px 0 0;
-  padding: 16px 0 clamp(32px, 5vw, 60px);
+  margin: 14px 0 0;
+  padding: 10px 0 clamp(32px, 5vw, 60px);
 
   background: transparent; /* show gradient */
 }
@@ -506,8 +507,6 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
-
-    /* keep one-slide viewport for JS */
     height: var(--step);
   }
 
@@ -516,8 +515,8 @@ footer {
     width: 100%;
   }
 
-  .box-info .list-img {
-    justify-content: flex-start;
+  .list-img .item {
+    align-items: flex-start;
   }
 
   .item img {
