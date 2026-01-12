@@ -1,26 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 /* =========================
-   Base
+   Tokens
    ========================= */
 :root {
   --bg: #f9f9f9;
   --green: #359381;
   --deep: #003329;
-  --white: #fff;
+  --white: #ffffff;
+
+  --shadow: 0 0 10px rgba(0, 0, 0, 0.10);
+  --radius: 18px;
 
   --pad-x: clamp(16px, 6vw, 80px);
   --pad-y: clamp(56px, 8vw, 110px);
 
-  --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  --radius: 18px;
+  /* IMPORTANT: height of the gradient stage behind Events + buttons */
+  --grad-h: clamp(780px, 112vh, 1250px);
+
+  /* IMPORTANT: carousel step (must match script.js translate step) */
+  --step: 310px;
+
+  /* slide height + margin-bottom must equal --step */
+  --slide-h: 250px;
+  --slide-gap: 60px;
 }
 
+/* =========================
+   Base reset
+   ========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 html, body {
@@ -34,7 +47,7 @@ body {
 }
 
 /* =========================
-   Header (logo + nav on left)
+   Header (logo + nav left)
    ========================= */
 header {
   position: absolute;
@@ -42,10 +55,12 @@ header {
   left: 0;
   width: 100%;
   padding: clamp(10px, 2vw, 20px) var(--pad-x);
+
   display: flex;
-  align-items: center;
   justify-content: flex-start;
+  align-items: center;
   gap: clamp(12px, 3vw, 30px);
+
   z-index: 200;
 }
 
@@ -54,12 +69,14 @@ header {
   font-size: clamp(16px, 1.7vw, 22px);
   color: var(--green);
   pointer-events: none;
+  margin-right: 0;
 }
 
 .navigation {
   display: flex;
   flex-wrap: wrap;
   gap: 12px; /* gaps between nav links */
+  margin-right: 0;
 }
 
 .navigation a,
@@ -148,14 +165,14 @@ header {
 }
 
 /* =========================
-   Gradient background layers
-   (must cover events + buttons)
+   Gradient background stage
+   (JS toggles .active on these)
    ========================= */
 .bg-box {
   position: relative;
   width: 100%;
-  /* Make this tall enough so the gradient sits behind BOTH carousel + prevnext */
-  min-height: clamp(820px, 110vh, 1250px);
+  height: var(--grad-h);
+  overflow: hidden;
   z-index: 0;
 }
 
@@ -163,18 +180,21 @@ header {
   position: absolute;
   inset: 0;
   transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  z-index: -1;
+  z-index: 0;
 }
 
 .bg-box .bg:nth-child(1) {
   background: linear-gradient(360deg, #408e20, #9acd31);
 }
+
 .bg-box .bg:nth-child(2) {
   background: linear-gradient(360deg, #550802, #f40401);
 }
+
 .bg-box .bg:nth-child(3) {
   background: linear-gradient(360deg, #696901, #ffff03);
 }
+
 .bg-box .bg:nth-child(4) {
   background: linear-gradient(360deg, #823043, #fac0cb);
 }
@@ -192,21 +212,22 @@ header {
 }
 
 /* =========================
-   Events carousel
-   - 1 event visible at a time
-   - text left, image right
-   - gap between them
+   Events: overlay carousel ON TOP of gradient stage
+   (CSS-only fix for the big empty gradient block)
    ========================= */
 .carousel {
   position: relative;
-  /* Let this sit “on” the gradient area */
+  z-index: 2;
+
+  /* pull the carousel upward so it sits on the gradient stage */
+  margin-top: calc(-1 * var(--grad-h));
+
   padding: clamp(56px, 7vw, 90px) var(--pad-x) 0;
   overflow: hidden;
-  z-index: 2;
+  background: transparent;
 }
 
-/* Controls how many slides are visible:
-   keep height fixed + overflow hidden */
+/* One-visible-at-a-time viewport: height must match JS step */
 .carousel .box-info {
   width: 100%;
   max-width: 1100px;
@@ -217,24 +238,24 @@ header {
   justify-content: space-between;
   gap: clamp(16px, 4vw, 36px);
 
-  height: 310px;      /* IMPORTANT: matches JS step */
+  height: var(--step);
   overflow: hidden;
-  padding-top: 0;
 }
 
+/* The sliding columns */
 .box-info .list-info,
 .box-info .list-img {
   position: relative;
   transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Left column: text */
+/* Left text column */
 .box-info .list-info {
   flex: 1 1 60%;
   min-width: 0;
 }
 
-/* Right column: one image per event */
+/* Right image column (one image per event) */
 .box-info .list-img {
   flex: 0 0 auto;
   display: flex;
@@ -242,8 +263,7 @@ header {
   min-width: 0;
 }
 
-/* Each slide item must equal:
-   slideHeight = 250px + marginBottom 60px = 310px */
+/* Each slide MUST total exactly --step (250 + 60 = 310) */
 .list-info .info,
 .list-img .item {
   display: flex;
@@ -251,11 +271,11 @@ header {
   justify-content: center;
   color: var(--white);
 
-  height: 250px;
-  margin-bottom: 60px;
+  height: var(--slide-h);
+  margin-bottom: var(--slide-gap);
 }
 
-/* Text styling */
+/* Text styles */
 .info h2 {
   font-size: clamp(18px, 2.2vw, 28px);
   line-height: 1.05;
@@ -269,7 +289,7 @@ header {
   padding: 0 10px;
 }
 
-/* Button */
+/* CTA button */
 .info .btn {
   display: inline-flex;
   justify-content: center;
@@ -314,23 +334,22 @@ header {
 }
 
 /* =========================
-   Prev / Next (separate, tight, on gradient)
+   Prev/Next buttons (separate, tight, on gradient)
    ========================= */
 .prevnext {
+  position: relative;
+  z-index: 2;
+
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 14px;
 
-  /* tight spacing below the events */
+  /* tight spacing under events */
   margin: 18px 0 0;
   padding: 16px 0 clamp(32px, 5vw, 60px);
 
-  /* KEY: keep transparent so gradient shows through */
-  background: transparent;
-
-  position: relative;
-  z-index: 2;
+  background: transparent; /* show gradient */
 }
 
 .prevnext span {
@@ -362,7 +381,7 @@ header {
 }
 
 /* =========================
-   Board section
+   Board
    ========================= */
 .board {
   position: relative;
@@ -462,10 +481,12 @@ footer {
   position: relative;
   width: 100%;
   padding: clamp(16px, 3vw, 28px) var(--pad-x);
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 18px;
+
   z-index: 100;
   background: var(--bg);
   margin-top: auto;
@@ -486,8 +507,8 @@ footer {
     align-items: flex-start;
     gap: 14px;
 
-    /* still keep one-slide viewport for JS */
-    height: 310px;
+    /* keep one-slide viewport for JS */
+    height: var(--step);
   }
 
   .box-info .list-info,
