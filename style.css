@@ -191,13 +191,13 @@ header {
   z-index: 0;
 }
 
-.bg-box .bg:nth-child(1) { background: linear-gradient(360deg, #408e20, #9acd31); }
-.bg-box .bg:nth-child(2) { background: linear-gradient(360deg, #550802, #f40401); }
-.bg-box .bg:nth-child(3) { background: linear-gradient(360deg, #696901, #ffff03); }
-.bg-box .bg:nth-child(4) { background: linear-gradient(360deg, #823043, #fac0cb); }
-.bg-box .bg:nth-child(5) { background: linear-gradient(360deg, #4b1366, #b07cf7); }
+.bg-box .bg:nth-child(1) { background: linear-gradient(360deg, #6fb64a, #c7e58a); }
+.bg-box .bg:nth-child(2) { background: linear-gradient(360deg, #8f2a22, #ff7a72); }
+.bg-box .bg:nth-child(3) { background: linear-gradient(360deg, #9a9a2e, #ffff7a); }
+.bg-box .bg:nth-child(4) { background: linear-gradient(360deg, #b06a86, #ffe0ea); }
+.bg-box .bg:nth-child(5) { background: linear-gradient(360deg, #8a5bd1, #dcc8ff); }
 .bg-box .bg:nth-child(6) { background: linear-gradient(360deg, #7b6a3d, #cdbb8a); }
-.bg-box .bg:nth-child(7) { background: linear-gradient(360deg, #1a1b4b, #5f6cff); }
+.bg-box .bg:nth-child(7) { background: linear-gradient(360deg, #3b3f7a, #a8b0ff); }
 
 .bg-box .bg:nth-child(2),
 .bg-box .bg:nth-child(3),
