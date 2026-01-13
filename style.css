@@ -191,7 +191,7 @@ header {
   z-index: 0;
 }
 
-.bg-box .bg:nth-child(1) { background: linear-gradient(360deg, #6fb64a, #c7e58a); }
+.bg-box .bg:nth-child(1) { background: linear-gradient(360deg, #408e20, #9acd31); }
 .bg-box .bg:nth-child(2) { background: linear-gradient(360deg, #b85a2a, #ffd2a3); }
 .bg-box .bg:nth-child(3) { background: linear-gradient(360deg, #9a9a2e, #ffff7a); }
 .bg-box .bg:nth-child(4) { background: linear-gradient(360deg, #b06a86, #ffe0ea); }
