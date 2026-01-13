@@ -122,11 +122,6 @@
                 <div class="board__name">Nicholas Cheah<span class="board__year">'25-’26</span></div>
                 <div class="board__role">President</div>
               </li>
-    
-              <li class="board__row">
-                <div class="board__name">Anna Phuah <span class="board__year">'25-'26</span></div>
-                <div class="board__role">Vice President</div>
-              </li>
             </ul>
           </div>
     
@@ -163,10 +158,19 @@
     <footer>
         <h2 class="contacts" id="contact">CONTACTS:</h2>
         <div class="social">
-            <a href="#" target="_blank">WHATSAPP</a>
+            <a href="#" id="whatsappBtn">WHATSAPP</a>
             <a href="https://www.instagram.com/mysaatucsd" target="_blank">INSTAGRAM</a>
         </div>
     </footer>
+    
+    <div class="modal" id="whatsappModal" aria-hidden="true">
+        <div class="modal__backdrop"></div>
+        <div class="modal__box" role="dialog" aria-modal="true">
+            <button class="modal__close" type="button">&times;</button>
+            <h3>WhatsApp Invite</h3>
+            <p>Contact <b>@mysaatucsd</b> or <b>@cheahfulnic</b> on Instagram for the invite link.</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
