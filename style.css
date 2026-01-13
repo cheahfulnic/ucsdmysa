@@ -192,11 +192,11 @@ header {
 }
 
 .bg-box .bg:nth-child(1) { background: linear-gradient(360deg, #6fb64a, #c7e58a); }
-.bg-box .bg:nth-child(2) { background: linear-gradient(360deg, #8f2a22, #ff7a72); }
+.bg-box .bg:nth-child(2) { background: linear-gradient(360deg, #b85a2a, #ffd2a3); }
 .bg-box .bg:nth-child(3) { background: linear-gradient(360deg, #9a9a2e, #ffff7a); }
 .bg-box .bg:nth-child(4) { background: linear-gradient(360deg, #b06a86, #ffe0ea); }
 .bg-box .bg:nth-child(5) { background: linear-gradient(360deg, #8a5bd1, #dcc8ff); }
-.bg-box .bg:nth-child(6) { background: linear-gradient(360deg, #7b6a3d, #cdbb8a); }
+.bg-box .bg:nth-child(6) { background: linear-gradient(360deg, #c2a875, #f2e6c7); }
 .bg-box .bg:nth-child(7) { background: linear-gradient(360deg, #3b3f7a, #a8b0ff); }
 
 .bg-box .bg:nth-child(2),
