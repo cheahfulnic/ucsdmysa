@@ -12,8 +12,9 @@ const bgs = document.querySelectorAll('.bg');
 
 let index = 0;
 
+const startScrollY = window.scrollY;
 window.addEventListener('scroll', () => {
-  let value = window.scrollY;
+  const value = Math.max(window.scrollY - startScrollY, 0);
 
   text.style.marginTop = value * 2.5 + 'px';
   leaf.style.top = value * -1.5 + 'px';
