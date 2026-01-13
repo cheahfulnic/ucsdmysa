@@ -27,7 +27,7 @@ window.addEventListener('scroll', () => {
    Events carousel controls
    ========================= */
 nextBtn.addEventListener('click', () => {
-  index = (index < 3) ? index + 1 : 3;
+  index = (index < 6) ? index + 1 : 6;
   listInfo.style.transform = `translateY(${index * -310}px)`;
   listImg.style.transform = `translateY(${index * -310}px)`;
   bgs[index].classList.add('active');
